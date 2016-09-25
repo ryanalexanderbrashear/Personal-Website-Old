@@ -43,7 +43,7 @@ var getInfo = function(latitude, longitude) {
         currentTemp = data.currently.temperature;
         maxTemp = data.daily.data[0].temperatureMax;
         minTemp = data.daily.data[0].temperatureMin;
-        rain = data.daily.data[0].precipProbability;
+        rain = data.daily.data[0].precipProbability * 100;
         weatherIcon = data.currently.icon;
         var conditions = data.currently.summary;
 
