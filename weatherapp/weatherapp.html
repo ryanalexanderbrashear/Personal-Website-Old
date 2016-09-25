@@ -21,14 +21,15 @@
 
         <!-- calling the facebook SDK so I can make a share button, this doesn't seem to work -->
         <div id="fb-root"></div>
-	    <script>(function(d, s, id) {
-	        var js, fjs = d.getElementsByTagName(s)[0];
-	        if (d.getElementById(id)) return;
-	        js = d.createElement(s); js.id = id;
-	        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
-	        fjs.parentNode.insertBefore(js, fjs);
-	        }(document, 'script', 'facebook-jssdk'));
-        </script>
+            <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+                fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+
 
         <!-- Nav bar -->
         <nav class="navbar navbar-default">
@@ -51,7 +52,7 @@
         </nav>
 
         <!-- Weather cards -->
-        <div class="fb-share-button" data-href="http://ryanbrashear.github.io" data-layout="button_count"></div> <!-- code to have a facebook share button, doesn't work -->
+       <div class="fb-share-button" data-href="https://ryanbrashear.github.io/weatherapp/weatherapp.html" data-layout="button_count" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fryanbrashear.github.io%2Fweatherapp%2Fweatherapp.html&amp;src=sdkpreparse">Share</a></div>
         <div class="container">
             <div class="row">
             </div>
@@ -74,6 +75,5 @@
                 </div> 
             </div>
         </div>
-
     </body>
 <html>
