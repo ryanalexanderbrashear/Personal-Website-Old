@@ -6,6 +6,7 @@ var cityState = "";
 
 $(function() {
 
+
     $("button#search").click(function(ev) {
         var zipCode = $("#searchBarText").val();
         getCoords(zipCode);
