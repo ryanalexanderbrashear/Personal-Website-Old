@@ -90,4 +90,9 @@ li {
 	margin-top: .8% !important;
 }
 
+.fb-share-button {
+	float:left;
+	margin-left: 10px;
+	margin-top: 15px;
+}
 
