@@ -10,9 +10,8 @@ body {
     border: 5px solid slategrey;
     border-radius: 10px;
     background-image: url("resources/paper.jpg");
-    position: relative;
-	transform: translateY(50%);
-    margin-bottom: 50%;
+    margin-bottom: 25%;
+    margin-top: 25%;
 }
 
 h1 {
