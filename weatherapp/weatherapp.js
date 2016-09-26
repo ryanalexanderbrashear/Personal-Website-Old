@@ -1,9 +1,3 @@
-var currentTemp = 0;
-var maxTemp = 0;
-var minTemp = 0;
-var rain = 0;
-var cityState = "";
-
 $(function() {
 
 
@@ -30,21 +24,27 @@ var getCoords = function(zipCode) {
         var latitude = data.results[0].geometry.location.lat;
         var longitude = data.results[0].geometry.location.lng;
         
-        cityState = data.results[0].formatted_address;
-        return getInfo(latitude, longitude);
+        var cityState = data.results[0].formatted_address;
+        return getInfo(latitude, longitude, zipCode, cityState);
+
     });
 }
 
-var getInfo = function(latitude, longitude) {
+var getInfo = function(latitude, longitude, zip, cityState) {
     var darkSkyKey = "93fa32d43382a60a9eb23ee3cb6b9d82";
     var url = "https://api.darksky.net/forecast/";
     $.ajax(url + darkSkyKey + "/" + latitude + "," + longitude, { dataType: "jsonp"}).done(function(data) {
         //Sets the information on the front of the card pertaining to today's weatherCard
-        currentTemp = data.currently.temperature;
-        maxTemp = data.daily.data[0].temperatureMax;
-        minTemp = data.daily.data[0].temperatureMin;
-        rain = data.daily.data[0].precipProbability * 100;
-        weatherIcon = data.currently.icon;
+
+        var today = new Date();
+        var tomorrow = new Date();
+        var month;
+
+        var currentTemp = data.currently.temperature;
+        var maxTemp = data.daily.data[0].temperatureMax;
+        var minTemp = data.daily.data[0].temperatureMin;
+        var precip = data.daily.data[0].precipProbability * 100;
+        var weatherIcon = data.currently.icon;
         var conditions = data.currently.summary;
 
         var template = $("#template").html();
@@ -55,8 +55,22 @@ var getInfo = function(latitude, longitude) {
         template = template.replace("@@currentTemp@@", Math.round(currentTemp));
         template = template.replace("@@maxTemp@@", Math.round(maxTemp));
         template = template.replace("@@minTemp@@", Math.round(minTemp));
-        template = template.replace("@@rain@@", rain);
+        template = template.replace("@@rain@@", precip);
         template = template.replace("@@cityState@@", cityState);
+        template = template.replace("@@zipCode@@", zip);
+
+        for (i = 0; i < 5; i++) {
+            if (i > 0) {
+                tomorrow.setDate(today.getDate() + i);
+                month = tomorrow.getMonth() + 1;
+                template = template.replace("@@date" + i + "@@", month + "/" + tomorrow.getDate());
+            }
+            template = template.replace("@@" + i + "max@@", Math.round(data.daily.data[i].temperatureMax));
+            template = template.replace("@@" + i + "low@@", Math.round(data.daily.data[i].temperatureMin));
+            template = template.replace("@@" + i + "precip@@", Math.round(data.daily.data[i].precipProbability * 100));
+        }
+
+
         $(".row").append(template);
     });
 }

@@ -43,6 +43,15 @@ body {
 	
 }
 
+.weatherCardBack {
+	margin-top:4%;
+	border: 2px white solid;
+	background-color: #1C1A59;
+	background-size: 100% 100%;
+	color:white;
+	border-radius:10px;
+}
+
 .searchBar {
 	float:right;
 	margin-top: .8%;
@@ -72,8 +81,6 @@ ul {
 
 li {
 	border: 2px white solid;
-	overflow: hidden;
-	white-space: nowrap;
 }
 
 .cardList li {
