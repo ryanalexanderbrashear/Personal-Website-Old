@@ -1,0 +1,47 @@
+body {
+    background-image: url("resources/background2.jpg");
+    background-size: 100% 100%;
+    color: slategrey !important;
+    font-weight: bold;
+}
+
+#card {
+    background-color:  beige;
+    border: 5px solid slategrey;
+    border-radius: 10px;
+    background-image: url("resources/paper.jpg");
+    position: relative;
+	transform: translateY(50%);
+    margin-bottom: 50%;
+}
+
+h1 {
+    border-bottom: 2px slategrey solid;
+}
+
+#numberSharing {
+    text-align:center;
+    border: 2px solid slategrey;
+}
+
+#billAmount {
+    text-align: center;
+    border: 2px solid slategrey;
+}
+
+#serviceOptions {
+    border: 2px solid slategrey;
+}
+
+.btn {
+    background-color: slategrey;
+    color: white;
+}
+
+.btn:hover {
+    color: lightblue !important;
+}
+
+h4 {
+    text-decoration: underline;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE <html>
+<html>
+
+<head>
+    <title>Tip Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- sets the viewport size -->
+    <link rel="stylesheet" href="tipCalc.css"> <!-- my local css file -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> <!-- bootstrap files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> <!-- bootstrap theme -->
+</head>
+
+<body>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script> <!-- official javascript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> <!-- official javascript ui -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> <!-- bootstrap js -->
+    <script src="tipCalc.js"></script> <!-- my local js file -->
+    <div class="container">
+        <div class="row">
+            <div id="card" class="col-xs-6 col-xs-offset-3" style="text-align:center">
+                <h1>Alex's Tip Calculator</h1>
+                <form>
+                    <p>
+                        <h4>Bill Amount:</h4>
+                        $<input type="number" id="billAmount" value=1 min=1>
+                    </p>
+                    <br />
+                    <p>
+                        <h4>How was the service?</h4>
+                        <select id="serviceOptions" required>
+                            <option disabled selected value></option>
+                            <option value=30>30% - Outstanding</option>
+                            <option value=20>20% - Good</option>
+                            <option value=15>15% - It was OK</option>
+                            <option value=10>10% - Bad</option>
+                            <option value=5>5% - Terrible</option>
+                        </select>
+                    </p>
+                    <br />
+                    <p>
+                        <h4>How many people are sharing the bill?</h4>
+                        <input type="number" id="numberSharing" value=1 min=1 max=9>
+                    </p>
+                    <br />
+                    <button type="button" id="submit" class="btn">Calculate Tip</button>
+                    <button type="button" id="clear" class="btn">Clear</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
