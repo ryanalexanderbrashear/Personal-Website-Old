@@ -1,0 +1,67 @@
+body {
+    background-image: url("resources/background.jpg");
+    background-size: 100% 100%;
+}
+
+#guessOneBox {
+    background-color: grey;
+    height: 30%;
+    text-align: center;
+    margin-top: 10%;
+    border: 2px solid black;
+    border-radius: 5px;
+    opacity: .8;
+}
+
+#guessOne {
+    color: black;
+}
+
+#guessTwoBox {
+    background-color: grey;
+    height: 30%;
+    text-align: center;
+    margin-top: 10%;
+    border: 2px solid black;
+    border-radius: 5px;
+    opacity: .8;
+}
+
+#guessTwo {
+    color: black;
+}
+
+#guessThreeBox {
+    background-color: grey;
+    height: 30%;
+    text-align: center;
+    margin-top: 10%;
+    border: 2px solid black;
+    border-radius: 5px;
+    opacity: .8;
+}
+
+#guessThree {
+    color: black;
+}
+
+#buttons {
+    text-align:center;
+    border: 2px black solid;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 2px;
+}
+
+.boxMiddle {
+    margin-top: 40%;
+}
+
+.valueText {
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 2px;
+    color: black;
+}
