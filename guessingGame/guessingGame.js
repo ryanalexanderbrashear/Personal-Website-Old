@@ -5,6 +5,9 @@ $(function() {
     var randomOne;
     var randomTwo;
     var randomThree;
+    $("#box1").text("0");
+    $("#box2").text("0");
+    $("#box3").text("0");
 
     initialSetup();
 
@@ -14,6 +17,9 @@ $(function() {
         var val1 = $("#guessOne").val();
         var val2 = $("#guessTwo").val();
         var val3 = $("#guessThree").val();
+        $("#box1").text(val1);
+        $("#box2").text(val2);
+        $("#box3").text(val3);
         if (checkForDuplicateInput(val1, val2, val3)) {
             alert("You cannot enter duplicates of the same number!");
         } 
@@ -67,6 +73,9 @@ function reset() {
     $("#guessTwoBox").css("background-color", "grey");
     $("#guessThree").val("0")
     $("#guessThreeBox").css("background-color", "grey");
+    $("#box1").text("0");
+    $("#box2").text("0");
+    $("#box3").text("0");
     
 }
 

@@ -5,9 +5,9 @@ body {
 
 #guessOneBox {
     background-color: grey;
-    height: 30%;
+    height: 60%;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
     border: 2px solid black;
     border-radius: 5px;
     opacity: .8;
@@ -20,9 +20,9 @@ body {
 
 #guessTwoBox {
     background-color: grey;
-    height: 30%;
+    height: 60%;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
     border: 2px solid black;
     border-radius: 5px;
     opacity: .8;
@@ -35,9 +35,9 @@ body {
 
 #guessThreeBox {
     background-color: grey;
-    height: 30%;
+    height: 60%;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
     border: 2px solid black;
     border-radius: 5px;
     opacity: .8;
@@ -57,16 +57,6 @@ body {
     box-shadow: 5px 5px 5px black;
 }
 
-.boxMiddle {
-    margin-top: 40%;
-}
-
-.valueText {
-    margin-left: 30%;
-    margin-right: 30%;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 2px;
-    color: black;
-    box-shadow: 5px 5px 5px black;
+h1 {
+    font-size: 40;
 }
