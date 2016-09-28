@@ -11,6 +11,7 @@ body {
     border: 2px solid black;
     border-radius: 5px;
     opacity: .8;
+    box-shadow: 5px 5px 5px black;
 }
 
 #guessOne {
@@ -25,6 +26,7 @@ body {
     border: 2px solid black;
     border-radius: 5px;
     opacity: .8;
+    box-shadow: 5px 5px 5px black;
 }
 
 #guessTwo {
@@ -39,6 +41,7 @@ body {
     border: 2px solid black;
     border-radius: 5px;
     opacity: .8;
+    box-shadow: 5px 5px 5px black;
 }
 
 #guessThree {
@@ -51,6 +54,7 @@ body {
     margin-left: 40%;
     margin-right: 40%;
     border-radius: 2px;
+    box-shadow: 5px 5px 5px black;
 }
 
 .boxMiddle {
@@ -64,4 +68,5 @@ body {
     border: 2px solid black;
     border-radius: 2px;
     color: black;
+    box-shadow: 5px 5px 5px black;
 }

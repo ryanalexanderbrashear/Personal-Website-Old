@@ -1,12 +1,18 @@
-var numShapes = 0; //counter for the game. If this reaches 9 without victory conditions being met, game is a tie
+//Game state variables
+var numPlaced = 0; //counter for the game. If this reaches 9 without victory conditions being met, game is a tie
 var xTurn = false; //boolean variable which will determine whose turn it is (true if X's turn, false if O)
+var xWin = 0;
+var oWin = 0;
 
+//this array tracks where x's have been placed
 var xArray = [
     [0, 0, 0],
     [0, 0, 0],
     [0, 0, 0]
 ];
 
+
+//this array tracks where o's have been placed
 var oArray = [
     [0, 0, 0],
     [0, 0, 0],
@@ -15,25 +21,35 @@ var oArray = [
 
 $(function () {
 
+    showWins();
+
+    //when the game first loads, O will always be the first to go
     alert("O will go first.");
 
     $(".square").click(function () {
         var id = $(this).attr('id');
+        $("#" + id).css("pointer-events", "none");
         clickHandler(id);
-        if (numShapes != 9) {
+        if (numPlaced != 9) {
             checkRowWinConditions();
             checkColumnWinConditions();
             checkDiagWinConditions();
-        } else {
+        } 
+        else {
             alert("Tied! Press reset to try again.")
         }
     });
+
+    $("#resetWins").click(function () {
+        resetWins();
+    })
 
     $("#reset").click(function () {
         reset();
     });
 });
 
+//this resets the game so that it can be played again
 function reset() {
     xArray = [
         [0, 0, 0],
@@ -47,9 +63,10 @@ function reset() {
         [0, 0, 0]
     ];
 
-    numShapes = 0;
+    numPlaced = 0;
 
     $(".square").css("background", "white");
+    $(".square").css("pointer-events", "auto");
 
     if (xTurn == false) {
         alert('O will go first.');
@@ -58,91 +75,101 @@ function reset() {
     }
 }//reset
 
+function showWins() {
+    document.getElementById("wins").innerHTML = "[ X Wins: " + xWin + " ][ O Wins: " + oWin + " ]";
+}
+
+function resetWins() {
+    xWin = 0;
+    oWin = 0;
+    showWins();
+}
+
+function xWon() {
+    alert("X has won! Press reset to start another game.");
+    xTurn = true;
+    xWin++;
+    showWins();
+}
+
+function oWon() {
+    alert("O has won! Press reset to start another game.");
+    xTurn = false;
+    oWin++;
+    showWins();
+}
+
 //Checks to see whether X or O have won horizontally
 function checkRowWinConditions() {
     if (xArray[0][0] + xArray[0][1] + xArray[0][2] == 3) {
-        alert("X has won! Press reset to start another game.");
-        xTurn = true;
+        xWon();
     } else if (xArray[1][0] + xArray[1][1] + xArray[1][2] == 3) {
-        alert("X has won! Press reset to start another game.");
-        xTurn = true; //means that next game, x will start first
+        xWon();
     } else if (xArray[2][0] + xArray[2][1] + xArray[2][2] == 3) {
-        alert("X has won! Press reset to start another game.");
-        xTurn = true;
+        xWon();
     }
 
     if (oArray[0][0] + oArray[0][1] + oArray[0][2] == 3) {
-        alert("O has won! Press reset to start another game.");
-        xTurn = false;
+        oWon();
     } else if (oArray[1][0] + oArray[1][1] + oArray[1][2] == 3) {
-        alert("O has won! Press reset to start another game.");
-        xTurn = false;
+        oWon();
     } else if (oArray[2][0] + oArray[2][1] + oArray[2][2] == 3) {
-        alert("O has won! Press reset to start another game.");
-        xTurn = false;
+        oWon();
     }
 }
 
 //Checks to see whether X or O have won vertically
 function checkColumnWinConditions() {
     if (xArray[0][0] + xArray[1][0] + xArray[2][0] == 3) {
-        alert("X has won! Press reset to start another game.");
-        xTurn = true;
+        xWon();
     } else if (xArray[0][1] + xArray[1][1] + xArray[2][1] == 3) {
-        alert("X has won! Press reset to start another game.");
-        xTurn = true;
+        xWon();
     } else if (xArray[0][2] + xArray[1][2] + xArray[2][2] == 3) {
-        alert("X has won! Press reset to start another game.");
-        xTurn = true;
+        xWon();
     }
 
     if (oArray[0][0] + oArray[1][0] + oArray[2][0] == 3) {
-        alert("O has won! Press reset to start another game.");
-        xTurn = false;
+        oWon();
     } else if (oArray[0][1] + oArray[1][1] + oArray[2][1] == 3) {
-        alert("O has won! Press reset to start another game.");
-        xTurn = false;
+        oWon();
     } else if (oArray[0][2] + oArray[1][2] + oArray[2][2] == 3) {
-        alert("O has won! Press reset to start another game.");
-        xTurn = false;
-    }      
+        oWon();
+    }   
 }
 
 //Checks to see whether X or O have won diagonally
 function checkDiagWinConditions() {
     if (xArray[0][0] + xArray[1][1] + xArray[2][2] == 3) {
-        alert("X has won! Press reset to start another game.");
-        xTurn = true;
+        xWon();
     } else if (xArray[0][2] + xArray[1][1] + xArray[2][0] == 3) {
-        alert("X has won! Press reset to start another game.");
-        xTurn = true;
+        xWon();
     }
 
     if (oArray[0][0] + oArray[1][1] + oArray[2][2] == 3) {
-        alert("O has won! Press reset to start another game.");
-        xTurn = false;
+        oWon();
     } else if (oArray[0][2] + oArray[1][1] + oArray[2][0] == 3) {
-        alert("O has won! Press reset to start another game.");
-        xTurn = false;
+        oWon();
     }
 }
 
+//when a square is clicked, this will handle giving it the proper image based on whose turn it is
 function clickHandler(id) {
     var squareId = id;
     if (xTurn) {
-        $("#" + id).css("background-image", 'url("resources/x.png")').css("background-size", "150px 150px");
-        numShapes++;
+        $("#" + id).css("background-image", 'url("resources/x.png")').css("background-size", "100% 100%");
+        numPlaced++;
         addToXScore(squareId);
-        xTurn = false;
+        xTurn = false; //it is now O's turn
     }
     else {
-        $("#" + id).css("background-image", 'url("resources/o.png")').css("background-size", "150px 150px");
-        numShapes++;
+        $("#" + id).css("background-image", 'url("resources/o.png")').css("background-size", "100% 100%");
+        numPlaced++;
         addToOScore(squareId);
-        xTurn = true;
+        xTurn = true; //it is now X's turn
     }
 }//clickHandler
 
+//this function increments X's score properly depending on which square has been clicked
 function addToXScore(id) {
     var squareId = id;
     switch (squareId) {
@@ -176,6 +203,7 @@ function addToXScore(id) {
     }
 }//addToXScore
 
+//this function increments X's score properly depending on which square has been clicked
 function addToOScore(id) {
     var squareId = id;
     switch (squareId) {
