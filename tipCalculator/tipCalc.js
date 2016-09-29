@@ -13,11 +13,15 @@ $(function() {
         if (tipPercent > 0 && billAmount > 0 && output == false) {
             if (numberSharing > 1) {
                 output = true;
+                $("#card").append("<h3 class='output'>Bill Per Person w/ Tip Included:</h3>");
+                $("#card").append("<h2 class='output'>$" + ((Number(billAmount) + Number(tipForMultiple))/Number(numberSharing)).toFixed(2) + "</h2>");
                 $("#card").append("<h3 class='output'>Tip Amount:</h3>");
                 $("#card").append("<h2 class='output'>$" + tipForMultiple + "</h2>");
                 $("#card").append("<h3 class='output'>Per Person</h3>");
             }
             else {
+                $("#card").append("<h3 class='output'>Bill w/ Tip Included:</h3>");
+                $("#card").append("<h2 class='output'>$" + (Number(billAmount) + Number(tipTotal)).toFixed(2) + "</h2>");
                 $("#card").append("<h3 class='output'>Tip Amount:</h3>");
                 $("#card").append("<h2 class='output'>$" + tipTotal + "</h2>");
                 output = true;
