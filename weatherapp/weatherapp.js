@@ -138,7 +138,7 @@ var changeColor = function(icon) {
             return "black";
 
         case "cloudy":
-            return "black";
+            return "white";
 
         case "partly-cloudy-day":
             return "black";
