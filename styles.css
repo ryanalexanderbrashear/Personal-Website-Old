@@ -1,12 +1,9 @@
 h1 {
     color:blue;
+    border: 2px black solid;
 }
 
 body {
-    background-color: #eeeeee;
+    background-color: lightgrey;
     text-align: center;
-}
-
-li a {
-    color: green;
 }
