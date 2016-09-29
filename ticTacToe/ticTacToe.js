@@ -36,7 +36,7 @@ $(function () {
             checkDiagWinConditions();
         } 
         else {
-            alert("Tied! Press reset to try again.")
+            alert("Tied! Press reset to try again.");
         }
     });
 

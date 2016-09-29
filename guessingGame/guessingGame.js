@@ -39,6 +39,21 @@ $(function() {
         }
     });
 
+    $("#guessOne").click(function () {
+        val1 = $("#guessOne").val();
+        $("#box1").text(val1);
+    });
+
+    $("#guessTwo").click(function () {
+        val2 = $("#guessTwo").val();
+        $("#box2").text(val2);
+    });
+
+    $("#guessThree").click(function () {
+        val3 = $("#guessThree").val();
+        $("#box3").text(val3);
+    });
+
     $("#resetButton").click(function () {
         reset();
     });
