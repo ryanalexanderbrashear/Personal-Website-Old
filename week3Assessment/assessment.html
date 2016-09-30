@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alex's Maply</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="assessment.css"> <!-- my local css file -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!-- bootstrap files -->
+        <link rel="stylesheet" href="superhero.css"> <!-- bootstrap files -->
+        <style>
+        html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        }
+        </style>
+    </head>
+
+
+    <body>
+
+        <!-- calling scripts -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script> <!-- official javascript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> <!-- official javascript ui -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> <!-- bootstrap js -->
+        <script src="assessment.js"></script> <!-- my project js -->
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <a class="navbar-brand">Maply</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="navbarButton"><a href="FAQ.html" target="_blank">FAQ</a></li>
+                    <li class="navbarButton"><a href="about.html" target="_blank">About</a></li>
+                    <li class="navbarButton"><a href="https://developers.google.com/maps/documentation/geocoding/start" target="_blank">Google Geocoding</a></li>
+                </ul>
+                <form>
+                    <button type="button" id="search" class="searchButton btn btn-primary">Show Map</button>
+                    <input type="text" class="searchBar" id="searchBarText" placeholder="Enter Zip/Address/City"></input>
+                    <button type="button"" id="remove" class="glyphicon glyphicon-remove"></button>
+                </form>
+            </div>
+        </nav>
+
+        <div id="map"></div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmNvCNpV_C5L4WoRSwSQtqlvsLiB0Xubk&callback=initMap"
+        async defer></script>
+    </body>
+</html>
