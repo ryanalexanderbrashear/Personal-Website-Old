@@ -34,4 +34,7 @@ function initMap(latitude, longitude) {
     map: map,
     title: 'Current Location'
     });
+
+
+    //Need to make a template and have it dynamically generate maps in this function
 }
