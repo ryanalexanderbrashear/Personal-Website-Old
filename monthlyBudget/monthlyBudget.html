@@ -2,56 +2,51 @@
 <html>
 
 <head>
-    <title>Tic Tac Toe</title>
+    <title>Monthly Budget</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- sets the viewport size -->
-    <link rel="stylesheet" href="ticTacToe.css"> <!-- my local css file -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> <!-- bootstrap files -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> <!-- bootstrap theme -->
-    <link rel="icon" href="resources/favicon.ico"> <!-- link for my favicon -->
+    <link rel="stylesheet" href="monthlyBudget.css"> <!-- my local css file -->
 </head>
 
 <body>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script> <!-- official javascript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> <!-- official javascript ui -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> <!-- bootstrap js -->
-    <script src="ticTacToe.js"></script> <!-- my local js file -->
+    <script src="monthlyBudget.js"></script> <!-- my local js file -->
 
     <script type="text/javascript">var switchTo5x=true;</script>
     <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
     <script type="text/javascript">stLight.options({publisher: "08dac190-bf63-41cf-91c2-7004b58729d8", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-    
-    <div class="navbar navbar-custom">
-        <h1 id="wins"></h1>
-        <button type="button" class="myButton btn btn-lg" id="resetWins">Reset Win Counter</button>
-        <button type="button" class="myButton btn btn-lg" id="reset">Reset</button>
-    </div>
+
+
     <span class='st_sharethis_large' displayText='ShareThis'></span>
     <span class='st_facebook_large' displayText='Facebook'></span>
     <span class='st_twitter_large' displayText='Tweet'></span>
     <span class='st_linkedin_large' displayText='LinkedIn'></span>
     <span class='st_pinterest_large' displayText='Pinterest'></span>
     <span class='st_email_large' displayText='Email'></span>
-
-    <table class="board">
-        <tr class="top">
-            <td class="square" id="topLeft"></td>
-            <td class="square" id="topMiddle"></td>
-            <td class="square" id="topRight"></td>
-        </tr>
-         <tr class="middle">
-            <td class="square" id="centerLeft"></td>
-            <td class="square" id="centerMiddle"></td>
-            <td class="square" id="centerRight"></td>
-        </tr>
-         <tr class="bottom">
-            <td class="square" id="bottomLeft"></td>
-            <td class="square" id="bottomMiddle"></td>
-            <td class="square" id="bottomRight"></td>
-        </tr>
-    </table>
     
-
-
+    <form>
+        <input type="text" id="billName" placeholder="Expenditure"></input>
+        <br />
+        $<input type="number" id="billAmount" placeholder="Cost"></input>
+        <br />
+        <button type="button" id="addRow">Add New Row</button>
+        <br />
+        <button type="button" id="showExpenditure">Show Total Expenditures</button>
+    </form>
+    <table id="budget">
+        <thead>
+            <tr>
+                <th>Bill Name</th>
+                <th>Bill Value</th>
+                <button type='button' class='removeRow'>Remove Row</button>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+    <p id="expenditures"></p>
 </body>
-
 </html>
