@@ -7,7 +7,6 @@ $(function() {
         $("#searchBarText").val("");
     });
 
-
     $("button#addMarker").click(function(ev) {
         var zipCode = $("#searchBarText").val();
         getCoordsForMarker(zipCode);
