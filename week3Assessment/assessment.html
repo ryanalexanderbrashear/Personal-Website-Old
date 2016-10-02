@@ -31,20 +31,47 @@
                 <a class="navbar-brand">Maply</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="navbarButton"><a href="https://developers.google.com/maps/documentation/geocoding/start" target="_blank">Google Geocoding</a></li>
+                    <li class="navbarButton"><a href="https://developers.google.com/maps/documentation/geocoding/start" target="_blank">Google Geocoding API</a></li>
+                    <li class="navbarButton"><a href="https://developers.google.com/maps/" target="_blank">Google Maps API</a></li>
                 </ul>
                 <form>
-                    <button type="button" id="addMarker" class="searchButton btn btn-primary">Add Another Marker</button>
                     <button type="button" id="search" class="searchButton btn btn-primary">Show Map</button>
                     <input type="text" class="searchBar" id="searchBarText" placeholder="Enter Zip/Address/City"></input>
                 </form>
             </div>
         </nav>
-        <row>
-            <div id="map"></div>
-        </row>
+        <div class="container">
+            <div class="row" id="maps">
+                <!--<div id="maps" style="width:50%; height:50%;">
+                </div>-->
+            </div>
+        <div>
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmNvCNpV_C5L4WoRSwSQtqlvsLiB0Xubk&callback=initMap"
-        async defer></script>
+        <div id="template" style="display:none">
+            <div class="col-md-4 col-xs-12 cardContainer">
+                <h1>@@cityState@@</h1>
+                <div id='@@ID1@@' style="width:100%; height:200px"></div>
+                <script>
+                    var map;
+                    var mapCanvas = document.getElementById('@@ID2@@');
+                    function initMap() {
+                        var location = {lat: @@latitude@@, lng: @@longitude@@};
+                        map = new google.maps.Map(mapCanvas, {
+                            center: location,
+                            zoom: 8
+                        });
+
+                        var marker = new google.maps.Marker({
+                            position: location,
+                            map: map
+                        });
+                    }
+                </script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmNvCNpV_C5L4WoRSwSQtqlvsLiB0Xubk&callback=initMap"
+                async defer></script>
+                <button type="button" id="remove">Remove Map</button>
+            </div>
+        </div>
+
     </body>
 </html>
