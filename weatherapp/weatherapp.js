@@ -6,14 +6,10 @@ $(function() {
         getCoords(zipCode);
         $("#searchBarText").val("");
     });
-    
-    $("button#remove").click(function(ev) { //removes the card specified in the prompt
-        var cardToRemove = window.prompt("Please enter the number of the card you wish to remove: ","Card Number");
-        if (cardToRemove <= $(".newCard").length) {
-            $(".newCard:nth-of-type(" + cardToRemove + ")").remove();
-        } else {
-            window.alert("Invalid card number entered!");
-        }
+
+    $(document).on('click', 'button#remove', function() {
+        var parentDiv = $(this).parent().parent();
+        parentDiv.remove();
     });
 
 });//onready function
