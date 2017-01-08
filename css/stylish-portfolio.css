@@ -173,6 +173,7 @@ hr.small {
 
 .services {
     padding: 50px 0;
+    background-color: #6ABBEA;
 }
 
 .service-item {
@@ -243,6 +244,8 @@ hr.small {
 
 footer {
     padding: 100px 0;
+    background-color: #6ABBEA;
+    color: #fff;
 }
 
 #to-top {
@@ -250,4 +253,9 @@ footer {
   position: fixed;
   bottom: 5px;
   right: 5px;
+}
+
+a {
+    color: rgba(0,0,0,0.4);
+    color: #fff;
 }
