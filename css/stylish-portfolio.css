@@ -210,6 +210,12 @@ hr.small {
     margin: 0 auto;
 }
 
+.img-portfolio-iOS {
+    width: 300px;
+    height: 532px;
+    margin: 0 auto;
+}
+
 .img-portfolio:hover {
     opacity: 0.8;
 }
