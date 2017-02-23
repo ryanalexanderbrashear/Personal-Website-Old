@@ -198,6 +198,8 @@ hr.small {
 
 .portfolio {
     padding: 50px 0;
+    background-color: #0C3E6F;
+    color: white;
 }
 
 .portfolio-item {
@@ -264,4 +266,52 @@ footer {
 a {
     color: rgba(0,0,0,0.4);
     color: #fff;
+}
+
+.contact-image {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+.carousel-control {
+    color: #6ABBEA;
+}
+
+.carousel-indicators .active {
+    background-color: #6ABBEA;
+}
+
+.carousel-indicators li {
+    background-color: #000;
+    border-color: #000;
+}
+
+.carousel-control:hover,
+.carousel-control:focus {
+    color: #6ABBEA;
+}
+
+.carousel-image {
+    width: 300px;
+    height: 300px;
+}
+
+#secretSantaCarousel {
+    height: 600px;
+    overflow: hidden;
+}
+
+#giftItCarousel {
+    height: 600px;
+    overflow: hidden;
+}
+
+#weatherlyCarousel {
+    height: 600px;
+    overflow: hidden;
 }
