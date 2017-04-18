@@ -306,6 +306,11 @@ a {
     overflow: hidden;
 }
 
+#hugCarousel {
+    height: 600px;
+    overflow: hidden;
+}
+
 #giftItCarousel {
     height: 600px;
     overflow: hidden;
