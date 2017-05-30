@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,14 +21,6 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body>
@@ -60,9 +51,9 @@
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
-            <h1>Ryan Brashear</h1>
-            <h2>Mobile Application Developer</h2>
-            <h3>Swift &bull; Java &bull; HTML &bull; CSS &bull; Javascript</h3>
+            <h1 class="header-text">Ryan Brashear</h1>
+            <h2 class="header-text">Mobile Application Developer</h2>
+            <h3 class="header-text">Swift &bull; Java &bull; HTML &bull; CSS &bull; Javascript</h3>
             <br>
             <a href="#services" class="btn btn-dark btn-lg">Find Out More</a>
         </div>
@@ -175,13 +166,13 @@
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>                
-                            <div class="col-md-6 text-center">
-                                <h1 style="margin-top: 180px;">HUG</h1>
+                            <div class="col-md-6 text-center" style="margin-top: 15%;">
+                                <h1>HUG</h1>
                                 <p class="lead">is an iOS application designed to help volunteers and specialists with the HUG reading program manage the information about the students, schools and volunteers involved with the program.
                                     For this project I served as both a developer and the iOS development team lead during development of this version.</p>
                             </div>
                         </div>
-                        <div class="col-md-12" style="margin-top: 5px;">
+                        <div class="col-md-12"> 
                             <div id="chirpCarousel" class="carousel slide col-md-6" data-ride="carousel" data-interval="false">
                                 <!-- Indicators -->
                                 <ol class="carousel-indicators">
@@ -220,13 +211,13 @@
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>                
-                            <div class="col-md-6 text-center">
-                                <h1 style="margin-top: 200px;">CHIRP</h1>
+                            <div class="col-md-6 text-center" style="margin-top: 15%;">
+                                <h1>CHIRP</h1>
                                 <p class="lead">is an iOS application that streams audio from the CHIRP radio station. 
                                     My work on this application included refactoring the application from Swift 2.0 to Swift 3.0 and fixing a variety of bugs that resulted from that.</p>
                             </div>
                         </div>
-                        <div class="col-md-12" style="margin-top: 5px;">
+                        <div class="col-md-12">
                             <div id="weatherlyCarousel" class="carousel slide col-md-6" data-ride="carousel" data-interval="false">
                                 <!-- Indicators -->
                                 <ol class="carousel-indicators">
@@ -265,7 +256,7 @@
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>                   
-                            <div class="col-md-6 text-center" style="margin-top: 150px;">
+                            <div class="col-md-6 text-center" style="margin-top: 15%;">
                                 <h1>Weather.ly</h1>
                                 <p class="lead">is a web application used to obtain the weather for a given city, address, or zip code, and display it. The background for the display changes with the current weather conditions, and the weekly forecase is also displayed.</p>
                                 <a href="weatherapp/weatherapp.html" class="btn btn-dark btn-lg">Try it out!</a>
@@ -291,12 +282,10 @@
                     <img class= "contact-image" src="img/me.jpg">
                     <h4><strong>Ryan Brashear</strong>
                     </h4>
-                    <p>37 Stacy Street Apartment 103
-                        <br>Harold, Kentucky 41635</p>
+                    <p>37 Stacy Street Apartment 103, Harold, Kentucky 41635</p>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i><a href="tel:606-216-0399">606-216-0399<a></li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i><a href="mailto:alexbrashear@gmail.com">alexbrashear@gmail.com</a>
-                        </li>
+                        <li><i class="fa fa-phone fa-fw"></i><a href="tel:606-216-0399">606-216-0399</a></li>
+                        <li><i class="fa fa-envelope fa-fw"></i><a href="mailto:alexbrashear@gmail.com">alexbrashear@gmail.com</a></li>
                     </ul>
                     <br>
                     <ul class="list-inline">
@@ -305,6 +294,9 @@
                         </li>
                         <li>
                             <a href="https://github.com/ryanbrashear"><i class="fa fa-github fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://gitlab.com/ryanbrashear"><i class="fa fa-gitlab fa-fw fa-3x"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
@@ -347,6 +339,7 @@
             }
         });
     });
+
     //#to-top button appears after scrolling
     var fixed = false;
     $(document).scroll(function() {
@@ -372,26 +365,6 @@
             }
         }
     });
-    // Disable Google Maps scrolling
-    // See http://stackoverflow.com/a/25904582/1607849
-    // Disable scroll zooming and bind back the click event
-    var onMapMouseleaveHandler = function(event) {
-        var that = $(this);
-        that.on('click', onMapClickHandler);
-        that.off('mouseleave', onMapMouseleaveHandler);
-        that.find('iframe').css("pointer-events", "none");
-    }
-    var onMapClickHandler = function(event) {
-            var that = $(this);
-            // Disable the click handler until the user leaves the map area
-            that.off('click', onMapClickHandler);
-            // Enable scrolling zoom
-            that.find('iframe').css("pointer-events", "auto");
-            // Handle the mouse leave event
-            that.on('mouseleave', onMapMouseleaveHandler);
-        }
-        // Enable map zooming with mouse scroll when the user clicks the map
-    $('.map').on('click', onMapClickHandler);
     </script>
 
 </body>

@@ -163,6 +163,11 @@ hr.small {
     -o-background-size: cover;
 }
 
+.header-text {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 /* About */
 
 .about {
@@ -202,26 +207,6 @@ hr.small {
     color: white;
 }
 
-.portfolio-item {
-    margin-bottom: 30px;
-}
-
-.img-portfolio {
-    height: 300px;
-    width: 300px; 
-    margin: 0 auto;
-}
-
-.img-portfolio-iOS {
-    width: 300px;
-    height: 532px;
-    margin: 0 auto;
-}
-
-.img-portfolio:hover {
-    opacity: 0.8;
-}
-
 /* Call to Action */
 
 .call-to-action {
@@ -232,26 +217,10 @@ hr.small {
     margin: 10px;
 }
 
-/* Map */
-
-.map {
-    height: 500px;
-}
-
-@media(max-width:768px) {
-    .map {
-        height: 75%;
-    }
-}
-
-.map iframe {
-    pointer-events: none;
-}
-
 /* Footer */
 
 footer {
-    padding: 100px 0;
+    padding: 10% 0;
     background-color: #6ABBEA;
     color: #fff;
 }
@@ -272,6 +241,10 @@ a {
     border-radius: 50%;
     height: 150px;
     width: 150px;
+}
+
+#contact {
+    height: 100%;
 }
 
 .carousel-control.left, .carousel-control.right {
@@ -299,24 +272,32 @@ a {
 .carousel-image {
     width: 300px;
     height: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #chirpCarousel {
-    height: 600px;
+    height: 550px;
     overflow: hidden;
 }
 
 #hugCarousel {
-    height: 600px;
+    height: 550px;
     overflow: hidden;
 }
 
 #giftItCarousel {
-    height: 600px;
+    height: 550px;
     overflow: hidden;
 }
 
 #weatherlyCarousel {
-    height: 600px;
+    height: 550px;
     overflow: hidden;
+}
+
+.portfolio-text {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
