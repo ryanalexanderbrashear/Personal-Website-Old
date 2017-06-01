@@ -250,6 +250,8 @@ a {
     height: 100%;
 }
 
+/* Carousel */
+
 .carousel-control.left, .carousel-control.right {
     background-image: none
 }
@@ -292,15 +294,4 @@ a {
 #giftItCarousel {
     height: 550px;
     overflow: hidden;
-}
-
-#weatherlyCarousel {
-    height: 550px;
-    overflow: hidden;
-}
-
-.portfolio-text {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
